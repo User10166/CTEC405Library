@@ -1,0 +1,34 @@
+import os
+import sys
+import site
+import setuptools
+from distutils.core import setup
+
+
+# Editable install in user site directory can be allowed with this hack:
+# https://github.com/pypa/pip/issues/7953.
+site.ENABLE_USER_SITE = "--user" in sys.argv[1:]
+
+setup(
+    name="CTEC4XXLibrary",
+    version="1.0.0",
+    description="Library functions for CTEC 4XX",
+    author="CTEC 4XX",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+    ],
+    packages=setuptools.find_packages(),
+    install_requires=[
+        "scipy",
+        "matplotlib",
+        "openpyxl",
+        "pandas",
+        "scikit-learn",
+        "XlsxWriter",
+        "numpy",
+        "python-docx",
+        "keras",
+        "openai"
+    ],
+    python_requires=">=3.9",
+)
