@@ -155,7 +155,6 @@ def readImages(imageData, imageDir, dataCol=0, categoriesCol=-1):
         imageArrayList.append(imageArray)
 
     return np.array(imageArrayList)
-    
 
 def convertArray(var):
   if type(var) is np.ndarray:
