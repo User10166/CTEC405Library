@@ -10,10 +10,10 @@ from distutils.core import setup
 site.ENABLE_USER_SITE = "--user" in sys.argv[1:]
 
 setup(
-    name="CTEC4XXLibrary",
+    name="CTEC405Library",
     version="1.0.0",
-    description="Library functions for CTEC 4XX",
-    author="CTEC 4XX",
+    description="Library functions for CTEC 405",
+    author="CTEC 405",
     classifiers=[
         "Programming Language :: Python :: 3",
     ],
