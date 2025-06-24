@@ -6,6 +6,7 @@ from docx.shared import Pt
 from docx.enum.section import WD_ORIENT
 from docx.shared import Inches
 import matplotlib.pyplot as plt
+from keras.preprocessing.image import img_to_array
 
 stdoutInstance = sys.stdout
 
@@ -142,6 +143,19 @@ def encodeLabels(YRaw):
       Y = np.array([uniqueIndexesList.index(idx) for idx in indexList])
       namesList = list(data.columns)
   return Y, uniqueIndexesList
+
+def readImages(imageData, imageDir, dataCol=0, categoriesCol=-1):
+    imageArrayList = []
+    imagePathList = [imageDir + im[dataCol] for im in imageData]
+    for i in range(len(imagePathList)):
+        image = imagePathList[i]
+        category = imageData[i, categoriesCol]
+        imageArray = img_to_array(image).flatten()
+        imageArray = np.hstack([imageArray, category])
+        imageArrayList.append(imageArray)
+
+    return np.array(imageArrayList)
+    
 
 def convertArray(var):
   if type(var) is np.ndarray:
