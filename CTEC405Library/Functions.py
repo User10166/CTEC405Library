@@ -142,7 +142,7 @@ def encodeLabels(YRaw):
   except ValueError:
       Y = np.array([uniqueIndexesList.index(idx) for idx in indexList])
       namesList = list(data.columns)
-  return Y, uniqueIndexesList
+  return Y
 
 def readImages(imageData, imageDir, dataCol=0, categoriesCol=-1):
     imageArrayList = []
