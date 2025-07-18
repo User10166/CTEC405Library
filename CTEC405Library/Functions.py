@@ -150,6 +150,7 @@ def readImages(imageData, imageDir, dataCol=0, categoriesCol=-1):
     for i in range(len(imagePathList)):
         image = imagePathList[i]
         category = imageData[i, categoriesCol]
+        category = category.reshape(len(category), 1)
         imageArray = img_to_array(image).flatten()
         imageArray = np.hstack([imageArray, category])
         imageArrayList.append(imageArray)
