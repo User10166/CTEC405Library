@@ -27,7 +27,7 @@ setup(
         "XlsxWriter",
         "numpy",
         "python-docx",
-        "keras",
+        "tensorflow",
         "openai"
     ],
     python_requires=">=3.9",
