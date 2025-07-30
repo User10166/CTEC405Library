@@ -1,2 +1,2 @@
-from .Functions import enableLogging, printTable, printVariable, readExcelSpreadsheet, encodeLabels, getPrompt
+from .Functions import enableLogging, disableLogging, printTable, printVariable, readExcelSpreadsheet, encodeLabels, readImages, getPrompt, downloadFileFromURL
 from .Architectures import feedForwardNN
