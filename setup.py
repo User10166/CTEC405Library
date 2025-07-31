@@ -28,6 +28,7 @@ setup(
         "numpy",
         "python-docx",
         "tensorflow",
+        "keras",
         "openai"
     ],
     python_requires=">=3.9",
