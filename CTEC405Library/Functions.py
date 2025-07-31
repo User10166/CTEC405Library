@@ -190,26 +190,6 @@ def getPrompt(*args):
       else:
         prompt = prompt + str(arg)
   return prompt
-
-def downloadFileFromURL(url, localFilePath):
-    parsedURL = urlparse(url)
-    urlPath = str(parsedURL.path)
-    fileName = os.path.basename(urlPath)
-    fileNamePath = Path(fileName)
-    extension = fileNamePath.suffix
-    savePath = localFilePath + extension
-
-    if os.path.isfile(savePath):
-        savePrompt = "Overwrite file at " + savePath + " (Y/N)? "
-        choice = input(savePrompt)
-        if choice != "Y":
-            return
-
-    try:
-        urlretrieve(url, savePath)
-        print(f"File '{savePath}' downloaded successfully.")
-    except Exception as e:
-        print(f"Error downloading file: {e}")
       
   
 
