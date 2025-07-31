@@ -131,8 +131,8 @@ def readExcelSpreadsheet(file, useColumnNames=True, useRowLabels=False):
 
 def encodeLabels(YRaw):
   data = pd.DataFrame(YRaw)
-  indexList = list(data)
-  uniqueIndexesList = list(data[data.columns[1]].unique())
+  indexList = list(data[data.columns[0]])
+  uniqueIndexesList = list(data[data.columns[0]].unique())
   firstCategory = indexList[0]
   try:
       int(firstCategory)
