@@ -195,13 +195,13 @@ def getRootWords(words):
     elif type(words) is np.ndarray:
         wordList = words.flatten().tolist()
     wnl = WordNetLemmatizer()
-    stemmedWords = []
+    lemmaWords = []
     for word in wordList:
         word = word.lower()
-        stemmedWord = wnl.lemmatize(word)
-        stemmedWords.append(stemmedWord)
-    stemmedWordsArray = np.array(stemmedWords)
-    uniqueWordsArray = np.unique(stemmedWordsArray)
+        lemmaWord = wnl.lemmatize(word)
+        lemmaWords.append(lemmaWord)
+    lemmaWordsArray = np.array(lemmaWords)
+    uniqueWordsArray = np.unique(lemmaWordsArray)
     return uniqueWordsArray.tolist()
       
   
