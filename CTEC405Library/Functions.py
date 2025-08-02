@@ -8,9 +8,6 @@ from docx.enum.section import WD_ORIENT
 from docx.shared import Inches
 import matplotlib.pyplot as plt
 from keras.preprocessing.image import img_to_array
-from urllib.request import urlretrieve
-from urllib.parse import urlparse
-from pathlib import Path
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 
 stdoutInstance = sys.stdout
