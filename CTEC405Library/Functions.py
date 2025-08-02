@@ -197,12 +197,11 @@ def getRootWords(words):
         wordList = words
     elif type(words) is np.ndarray:
         wordList = words.tolist()
-    stemmer = PorterStemmer()
     wnl = WordNetLemmatizer()
     stemmedWords = []
     for word in wordList:
         word = word.lower()
-        stemmedWord = wnl.lemmatize(word) if wnl.lemmatize(word).endswith('e') else stemmer.stem(word)
+        stemmedWord = wnl.lemmatize(word)
         stemmedWords.append(stemmedWord)
     stemmedWordsArray = np.array(stemmedWords)
     uniqueWordsArray = np.unique(stemmedWordsArray)
