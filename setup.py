@@ -28,7 +28,8 @@ setup(
         "numpy",
         "python-docx",
         "tensorflow",
-        "keras"
+        "keras",
+        "nltk"
     ],
     python_requires=">=3.9",
 )
