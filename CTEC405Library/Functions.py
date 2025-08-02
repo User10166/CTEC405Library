@@ -11,6 +11,7 @@ from keras.preprocessing.image import img_to_array
 from urllib.request import urlretrieve
 from urllib.parse import urlparse
 from pathlib import Path
+from nltk.stem import PorterStemmer, WordNetLemmatizer
 
 stdoutInstance = sys.stdout
 
@@ -190,6 +191,22 @@ def getPrompt(*args):
       else:
         prompt = prompt + str(arg)
   return prompt
+
+def getRootWords(words):
+    if type(words) is list:
+        wordList = words
+    elif type(words) is np.ndarray:
+        wordList = words.tolist()
+    stemmer = PorterStemmer()
+    wnl = WordNetLemmatizer()
+    stemmedWords = []
+    for word in wordList:
+        word = word.lower()
+        stemmedWord = wnl.lemmatize(word) if wnl.lemmatize(word).endswith('e') else stemmer.stem(word)
+        stemmedWords.append(stemmedWord)
+    stemmedWordsArray = np.array(stemmedWords)
+    uniqueWordsArray = np.unique(stemmedWordsArray)
+    return uniqueWordsArray.tolist()
       
   
 
