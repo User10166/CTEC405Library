@@ -5,5 +5,5 @@ try:
     nltk.data.find('corpora/wordnet.zip')
 except LookupError:
     nltk.download('popular')
-from .Functions import enableLogging, disableLogging, printTable, printVariable, readExcelSpreadsheet, encodeLabels, readImages, getPrompt
+from .Functions import enableLogging, disableLogging, printTable, printVariable, readExcelSpreadsheet, encodeLabels, readImages, getPrompt, getRootWords
 from .Architectures import feedForwardNN
