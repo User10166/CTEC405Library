@@ -196,7 +196,7 @@ def getRootWords(words):
     if type(words) is list:
         wordList = words
     elif type(words) is np.ndarray:
-        wordList = words.tolist()
+        wordList = words.flatten().tolist()
     wnl = WordNetLemmatizer()
     stemmedWords = []
     for word in wordList:
