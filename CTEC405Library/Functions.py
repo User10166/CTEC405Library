@@ -202,7 +202,7 @@ def getRootWords(words):
         lemmaWords.append(lemmaWord)
     lemmaWordsArray = np.array(lemmaWords)
     uniqueWordsArray = np.unique(lemmaWordsArray)
-    return uniqueWordsArray.tolist()
+    return uniqueWordsArray
       
   
 
