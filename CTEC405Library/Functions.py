@@ -157,7 +157,7 @@ def readImages(imageData, imageDir, dataCol=0, categoriesCol=-1):
         imageArray = np.hstack([imageArray, category])
         imageArrayList.append(imageArray)
 
-    return np.array(imageArrayList)
+    return np.array(imageArrayList, dtype=object)
 
 def convertArray(var):
   if type(var) is np.ndarray:
