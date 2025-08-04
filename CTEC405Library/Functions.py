@@ -150,13 +150,8 @@ def readImages(imageData, imageDir, dataCol=0, categoriesCol=-1):
     imageArrayList = []
     imagePathList = [imageDir + im[dataCol] for im in imageData]
     for i in range(len(imagePathList)):
-        image = imagePathList[i]
-        try:
-            img = Image.open(image_path)
-        except FileNotFoundError:
-            print(f"Error: The file '{image_path}' was not found.")
-        except Exception as e:
-            print(f"An error occurred: {e}")
+        imagePath = imagePathList[i]
+        img = Image.open(imagePath)
         category = imageData[i, categoriesCol]
         imageArray = img_to_array(img).flatten()
         imageArray = np.hstack([imageArray, category])
