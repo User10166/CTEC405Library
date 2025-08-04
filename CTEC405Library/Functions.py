@@ -151,13 +151,13 @@ def readImages(imageData, imageDir, dataCol=0, categoriesCol=-1):
     imagePathList = [imageDir + im[dataCol] for im in imageData]
     for i in range(len(imagePathList)):
         imagePath = imagePathList[i]
-        img = Image.open(imagePath)
+        img = Image.open(imagePath).convert("RGB")
         category = imageData[i, categoriesCol]
         imageArray = img_to_array(img).flatten()
         imageArray = np.hstack([imageArray, category])
         imageArrayList.append(imageArray)
 
-    return np.array(imageArrayList, dtype=object)
+    return np.array(imageArrayList)
 
 def convertArray(var):
   if type(var) is np.ndarray:
