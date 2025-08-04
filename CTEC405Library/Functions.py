@@ -6,7 +6,7 @@ from docx import Document
 from docx.shared import Pt
 from docx.enum.section import WD_ORIENT
 from docx.shared import Inches
-import matplotlib.pyplot as plt
+from PIL import Image
 from keras.preprocessing.image import img_to_array
 from nltk.stem import WordNetLemmatizer
 
@@ -151,8 +151,14 @@ def readImages(imageData, imageDir, dataCol=0, categoriesCol=-1):
     imagePathList = [imageDir + im[dataCol] for im in imageData]
     for i in range(len(imagePathList)):
         image = imagePathList[i]
+        try:
+            img = Image.open(image_path)
+        except FileNotFoundError:
+            print(f"Error: The file '{image_path}' was not found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
         category = imageData[i, categoriesCol]
-        imageArray = img_to_array(image).flatten()
+        imageArray = img_to_array(img).flatten()
         imageArray = np.hstack([imageArray, category])
         imageArrayList.append(imageArray)
 
