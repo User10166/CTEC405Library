@@ -13,9 +13,15 @@ setup(
     name="CTEC405Library",
     version="1.0.0",
     description="Library functions for CTEC 405",
-    author="CTEC 405",
+    author="R. Duke",
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Intended Audience :: Education",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Topic :: Scientific/Engineering",
     ],
     packages=setuptools.find_packages(),
     install_requires=[
