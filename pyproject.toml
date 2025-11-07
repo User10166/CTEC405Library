@@ -3,7 +3,7 @@ requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
 
 [project]
-name = "CTEC 405 Library"
+name = "CTEC405Library"
 version = "1.0.0"
 authors = [
   { name="R. Duke", email="rduke01@nyit.edu" },
